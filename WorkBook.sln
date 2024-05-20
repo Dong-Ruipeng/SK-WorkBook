@@ -10,15 +10,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-CreateKernel", "01-Creat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SK_CreateKernel", "SK_CreateKernel\SK_CreateKernel.csproj", "{687CEF97-57A7-4708-B12F-B8282B32FBCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Plugins-Prompt function", "02-Plugins-Prompt function", "{8B4D17B9-0C1C-42CE-ABFB-A09C56D9268A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prompt_function", "Prompt_function\Prompt_function.csproj", "{0BE84053-EA78-4291-9B64-BC42ED50E40C}"
+EndProject
 Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF3CC1D7-7CC9-4181-BB63-C455437DBB64}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{0BE84053-EA78-4291-9B64-BC42ED50E40C} = {8B4D17B9-0C1C-42CE-ABFB-A09C56D9268A}
 		{19289754-AD0C-4691-99B3-30251191FE04} = {D5DEBF01-EDD3-4C51-9CD4-E961E0AE1569}
 		{687CEF97-57A7-4708-B12F-B8282B32FBCA} = {62D7CBF8-868C-40C0-9372-646873A900E0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE84053-EA78-4291-9B64-BC42ED50E40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE84053-EA78-4291-9B64-BC42ED50E40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE84053-EA78-4291-9B64-BC42ED50E40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE84053-EA78-4291-9B64-BC42ED50E40C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19289754-AD0C-4691-99B3-30251191FE04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19289754-AD0C-4691-99B3-30251191FE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19289754-AD0C-4691-99B3-30251191FE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
