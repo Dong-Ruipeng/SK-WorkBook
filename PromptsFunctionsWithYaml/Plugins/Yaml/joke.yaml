@@ -1,0 +1,18 @@
+name: GenerateJoke
+template: |
+  Tell me a joke about {{$topic}} that is {{$length}} sentences long.
+template_format: semantic-kernel
+description: A function that generates a joke about a topic.
+input_variables:
+  - name: topic
+    description: The topic of the joke.
+    is_required: true
+  - name: length
+    description: The number of sentences in the joke.
+    is_required: true
+output_variable:
+  description: The generated joke.
+execution_settings:
+  default:
+    temperature: 0.9
+    max_token : 1024
