@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Prompts functions With Y
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromptsFunctionsWithYaml", "PromptsFunctionsWithYaml\PromptsFunctionsWithYaml.csproj", "{96DCCD0D-FBB4-4329-A534-D633C5AB9A83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Handlebars Prompt Template", "04-Handlebars Prompt Template", "{CB87F786-33DF-495B-BC1F-D8BC49FE02FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromptsFunctionsWithHandleBars", "PromptsFunctionsWithHandleBars\PromptsFunctionsWithHandleBars.csproj", "{DC9D6773-8749-47A7-BDDC-08CAC3A55832}"
+EndProject
 Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF3CC1D7-7CC9-4181-BB63-C455437DBB64}
@@ -27,6 +31,7 @@ Global
 		{19289754-AD0C-4691-99B3-30251191FE04} = {D5DEBF01-EDD3-4C51-9CD4-E961E0AE1569}
 		{687CEF97-57A7-4708-B12F-B8282B32FBCA} = {62D7CBF8-868C-40C0-9372-646873A900E0}
 		{96DCCD0D-FBB4-4329-A534-D633C5AB9A83} = {669EEA24-6EDF-4CC7-93E6-05C5C73FB36E}
+		{DC9D6773-8749-47A7-BDDC-08CAC3A55832} = {CB87F786-33DF-495B-BC1F-D8BC49FE02FE}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0BE84053-EA78-4291-9B64-BC42ED50E40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -45,6 +50,10 @@ Global
 		{96DCCD0D-FBB4-4329-A534-D633C5AB9A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96DCCD0D-FBB4-4329-A534-D633C5AB9A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96DCCD0D-FBB4-4329-A534-D633C5AB9A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9D6773-8749-47A7-BDDC-08CAC3A55832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9D6773-8749-47A7-BDDC-08CAC3A55832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9D6773-8749-47A7-BDDC-08CAC3A55832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9D6773-8749-47A7-BDDC-08CAC3A55832}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
