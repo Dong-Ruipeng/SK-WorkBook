@@ -1,15 +1,8 @@
-﻿using System;
-using System.Runtime;
-using System.Text.Json;
-using Azure.AI.OpenAI;
-using Azure.Messaging;
-using FunctionCalling;
+﻿using FunctionCalling;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
-using Microsoft.VisualBasic;
 using SkUtil.Configs;
-using SkUtil.CustomLLM;
 
 var config = ConfigExtensions.FromConfig<OpenAIConfig>("InternalAzureOpenAI");
 //建议使用 OpenAI 的最新模型（如 gpt-3.5-turbo-1106 或 gpt-4-1106-preview）以获得最佳的工具调用体验。OpenAI 的最新模型通常具有更好的性能和更高的准确性，因此使用这些模型可以提高工具调用的效果。

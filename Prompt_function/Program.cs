@@ -91,5 +91,4 @@ Console.WriteLine("====>基于PromptTemplateConfig 创建 kernel functions<=====
 
     Console.WriteLine(functionResult?.ToString() ?? string.Empty);
 }
-
 Console.ReadKey();
