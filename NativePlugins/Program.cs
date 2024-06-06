@@ -7,31 +7,50 @@ using Microsoft.SemanticKernel;
 using NativePlugins.Plugins.Weather;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using Microsoft.SemanticKernel.ChatCompletion;
-var config = ConfigExtensions.FromConfig<OpenAIConfig>("OneApiSpark");
-//自定义HttpClientHandler
-var openAICustomHandler = new OpenAICustomHandler(config.Endpoint);
-using HttpClient client = new(openAICustomHandler);
+using NativePlugins.Plugins.Finefood;
+using Microsoft.Extensions.DependencyInjection;
+var config = ConfigExtensions.FromConfig<OpenAIConfig>("InternalAzureOpenAI");
 
-//定义kernel 对象
 var kernel = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId: config.ModelId,
-apiKey: config.ApiKey,
-httpClient: client).Build();
-
-kernel.ImportPluginFromType<WeatherPlugin>();
-
-
-OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new OpenAIPromptExecutionSettings()
+apiKey: config.ApiKey).Build();
+Console.WriteLine("ImportPluginFromType 创建插件");
 {
-    Temperature = 0.3,
-    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
-};
-var chatHistory = new ChatHistory();
-chatHistory.AddSystemMessage("You are a useful assistant.");
-var input = Console.ReadLine();
-chatHistory.AddUserMessage(input);
-Console.WriteLine($"User: {input}");
-var chatService = kernel.GetRequiredService<IChatCompletionService>();
-var result = await chatService.GetChatMessageContentAsync(chatHistory, openAIPromptExecutionSettings, kernel);
-Console.WriteLine("Assistant:" + result.ToString());
+    kernel.ImportPluginFromType<WeatherPlugin>();
+    var getWeatherFunc = kernel.Plugins.GetFunction(nameof(WeatherPlugin), "WeatherSearch");
+    var weatherContent = await getWeatherFunc.InvokeAsync(kernel, new() { ["city"] = "北京" });
+    Console.WriteLine(weatherContent.ToString());
+}
+
+
+Console.WriteLine("ImportPluginFromObject");
+{
+    //FinefoodPlugin finefoodPlugin = new();
+
+    //依赖注入举例
+
+    IServiceCollection services = new ServiceCollection();
+    services.AddSingleton<FinefoodPlugin>();
+    var rootProvider = services.BuildServiceProvider();
+    FinefoodPlugin finefoodPlugin = rootProvider.GetRequiredService<FinefoodPlugin>();
+    kernel.ImportPluginFromObject(finefoodPlugin);
+    var getFinefoodListFunc = kernel.Plugins.GetFunction(nameof(FinefoodPlugin), "GetFinefoodList");
+    var weatherContent = await getFinefoodListFunc.InvokeAsync(kernel, new() { ["city"] = "北京" });
+    Console.WriteLine(weatherContent.ToString());
+}
+
+Console.WriteLine("ImportPluginFromFunctions");
+{
+    var kernelfunction = kernel.CreateFunctionFromMethod((string city) => { return $"{city} 好玩的地方有八达岭长城，故宫，恭王府等"; },
+        functionName: "GetTourismClassic", description: "获取城市的经典",
+         [
+            new KernelParameterMetadata(name:"city") {
+             Description="城市名"
+    }]);
+    kernel.ImportPluginFromFunctions("TourismClassicPlugin", [kernelfunction]);
+    var getTourismClassic = kernel.Plugins.GetFunction("TourismClassicPlugin", "GetTourismClassic");
+    var weatherContent = await getTourismClassic.InvokeAsync(kernel, new() { ["city"] = "北京" });
+    Console.WriteLine(weatherContent.ToString());
+}
+
 
 Console.ReadKey();
