@@ -1,3 +1,4 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34814.14
@@ -40,7 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SK_KernelMemory", "SK_Kerne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08-DependencyInject", "08-DependencyInject", "{C2CE0281-E756-4A7B-9B62-304E028557E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KernelDependencyInject", "KernelDependencyInject\KernelDependencyInject.csproj", "{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KernelDependencyInject", "KernelDependencyInject\KernelDependencyInject.csproj", "{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09-Plugins Core", "09-Plugins Core", "{093FA9DC-D1DC-4CF7-9F8C-352362FC7CF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKPlugins.Core", "SKPlugins.Core\SKPlugins.Core.csproj", "{4FA7849E-4093-4FE3-9413-C01189DAA1F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{BDDB660F-D1E0-47FB-BA87-E970D232FC6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +95,10 @@ Global
 		{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA7849E-4093-4FE3-9413-C01189DAA1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA7849E-4093-4FE3-9413-C01189DAA1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA7849E-4093-4FE3-9413-C01189DAA1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA7849E-4093-4FE3-9413-C01189DAA1F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +114,7 @@ Global
 		{52961D83-53B6-424E-8430-838F7C03593E} = {FA694263-44F9-45A3-928B-C583B6F83CF4}
 		{56650880-673F-4BFE-AB85-0BA4E8A34BB4} = {08E43322-521B-49F1-A7F4-6EE82B06C8FD}
 		{AFAE7A8F-9A46-4203-BEAD-0BB3615DDF8F} = {C2CE0281-E756-4A7B-9B62-304E028557E8}
+		{4FA7849E-4093-4FE3-9413-C01189DAA1F1} = {093FA9DC-D1DC-4CF7-9F8C-352362FC7CF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF3CC1D7-7CC9-4181-BB63-C455437DBB64}

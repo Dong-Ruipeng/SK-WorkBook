@@ -1,11 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text;
+
 using Microsoft.KernelMemory;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using Microsoft.SemanticKernel.Embeddings;
 using Microsoft.SemanticKernel.TextGeneration;
+
 using SK_KernelMemory;
 
 var config = ConfigExtensions.FromConfig<SkUtil.Configs.OpenAIConfig>("InternalAzureOpenAI");
@@ -32,7 +34,7 @@ var memoryBuilder = new KernelMemoryBuilder()
 
 //var qdrantMemoryBuilder = new MemoryBuilder().
 //WithTextEmbeddingGeneration(textEmbedding).
-//WithQdrantMemoryStore("http://cnccappulv5030:6333", 1536)
+//WithQdrantMemoryStore("http://localhost:6333", 1536)
 //.Build();
 
 
