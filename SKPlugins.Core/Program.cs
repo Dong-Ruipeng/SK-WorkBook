@@ -20,7 +20,7 @@ var kernel = Kernel.CreateBuilder().
 
 
 var conversationSummaryPlugin = kernel.ImportPluginFromType<ConversationSummaryPlugin>();
-
+var customCustomConversationSummaryPlugin = kernel.ImportPluginFromType<CustomConversationSummaryPlugin>();
 
 string chatTranscript = @"
 A: 你好，最近工作很忙碌，我们需要安排下周的会议时间，你觉得周几比较合适？
@@ -43,12 +43,12 @@ Console.WriteLine("SamplePlugins - Conversation Summary Plugin - Summarize");
 {
 
     FunctionResult summary = await kernel.InvokeAsync(
-        conversationSummaryPlugin["SummarizeConversation"], new() { ["input"] = chatTranscript });
+        customCustomConversationSummaryPlugin["SummarizeConversation"], new() { ["input"] = chatTranscript });
 
     Console.WriteLine($"Generated Summary:{summary.ToString()}");
 }
 
-Console.WriteLine("-----------");
+
 
 
 
@@ -61,22 +61,19 @@ Console.WriteLine("======== SamplePlugins - Conversation Summary Plugin - Action
         conversationSummaryPlugin["GetConversationActionItems"], new() { ["input"] = chatTranscript });
 
     Console.WriteLine($"Generated Action Items:{summary.ToString()}");
-    Console.WriteLine(summary.GetValue<string>());
 
 }
 
 
 
 
-Console.WriteLine("======== SamplePlugins - Conversation Summary Plugin - Action Items ========");
 {
     Console.WriteLine("======== SamplePlugins - Conversation Summary Plugin - Topics ========");
 
     FunctionResult summary = await kernel.InvokeAsync(
         conversationSummaryPlugin["GetConversationTopics"], new() { ["input"] = chatTranscript });
 
-    Console.WriteLine("Generated Topics:");
-    Console.WriteLine(summary.GetValue<string>());
+    Console.WriteLine($"Generated Topics:{summary.ToString()}");
 
 }
 
